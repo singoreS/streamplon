@@ -1,0 +1,186 @@
+
+
+main {
+  background: white;
+}
+
+/* main > section {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  min-height: 20vh;
+  padding: 40px 55px;
+  position: relative;
+  gap: 40px;
+} */
+
+section > h2 {
+  position: absolute;
+  top: 0px;
+}
+
+section :is(div, figure) {
+  background: var(--gc);
+  flex: 1;
+  height: 210px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 280px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+section > div > span::after {
+  content: "+";
+  animation: 1s jenny 0.5s linear infinite;
+}
+
+@keyframes jenny {
+  0%,
+  100% {
+    font-size: 30px;
+  }
+
+  50% {
+    font-size: 50px;
+  }
+}
+
+main > section:nth-child(2),
+main > section:nth-child(3){
+  background: var(--j);
+}
+
+h3 {
+  font-size: 90px;
+  font-family: var(--h);
+}
+
+h3::first-letter{
+    font-size: 128px;
+    color: var(--j);
+    text-shadow: 0 0 5px black;
+    letter-spacing: -25px;
+}
+
+figure > img,
+article > video {
+    max-width: 100%;
+    min-height: 100%;
+    object-fit: contain;
+}
+
+.top {
+    height: 275px;
+    background: black;
+    overflow: hidden;
+}
+
+.txt {
+    position: absolute;
+    top: 175px;
+    left: 0;
+    background: rgba(0,0,0,.6);
+    height: 275px;
+    width: 100%;
+    display: block;
+    flex-direction: column;
+    transition: top 1s linear;
+    padding: 35px 10px 10px;
+}
+
+.txt:hover {
+    top: 0;
+}
+
+.bloc {
+    position: relative;
+}
+
+.txt > h4 {
+    color: white;
+    font-family: var(--h);
+}
+
+.txt > p {
+    color: gainsboro;
+    margin: 10px 0; 
+}
+
+.txt > a {
+    text-decoration: none;
+    color: white;
+    width: 80%;
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 1px solid white;
+    display: block;
+    text-align: center;
+    line-height: 40px;
+    height: 40px;
+}
+
+.txt > span {
+    color: white;
+    position: absolute;
+    font-size: 30px;
+    top: -5px;
+}
+
+main > section:nth-child(2) > figure > img {
+    transform: scale(1);
+    transition: transform .5s linear;
+    filter: grayscale(70%);
+}
+
+main > section:nth-child(2) > figure:hover > img {
+    transform: scale(1.2);
+    filter: grayscale(0%);
+}
+
+::selection{
+    background: crimson;
+    color: white;
+}
+
+#blanc {
+    color: white;
+}
+
+#gris {
+    width: 100%;
+    height: 120px;
+    background: var(--gf);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+}
+
+#niv {
+    z-index: 2;
+}
+
+#modal {
+    width: 80vw;
+    background: black;
+    color: white;
+    padding: 20px;
+    position: absolute;
+    top: 10vh;
+    left: 10vw;
+    height: 80vh;
+}
+
+#modal:not(:target){
+    display: none;
+}
+
+#modal:target {
+    display: block;
+}
+
+#vidmodal {
+    height: 40vh;
+}
